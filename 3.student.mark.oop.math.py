@@ -1,60 +1,134 @@
+import numpy as np
+import curses
+
 student = []
 course = []
 mark = []
+# gpa = []
 
 print("--------------------------------")
 print()
 
+stdscr = curses.initscr()
+stdscr.addstr(0, 0, "Current mode: Typing mode",
+              curses.A_REVERSE)
+stdscr.refresh()
+
+# --------------------------------------------------STUDENT INFORMATION
+# STUDENT INFORMATION -------------------------------------------------
+# ---------------------------------------------------------------------
 class Std_Info():    
     def __init__(self, s_ID, s_Name, s_DoB):
         self.s_ID = s_ID
         self.s_Name = s_Name
         self.s_DoB = s_DoB
-
-    def set_s_ID(self, s_ID):
-        self.s_ID = s_ID
-
+        
+    # ID
     def get_ID(self):
         return self.s_ID
-
+    def set_s_ID(self, s_ID):
+        self.s_ID = s_ID
+    
+    # Name
+    def get_Name(self):
+        return self.s_Name
     def set_s_Name(self, s_Name):
         self.s_Name = s_Name
 
-    def get_Name(self):
-        return self.s_Name
-
+    # DoB
+    def get_DoB(self):
+        return self.s_DoB
     def set_s_DoB(self, s_DoB):
         self.s_DoB = s_DoB
 
-    def get_DoB(self):
-        return self.s_DoB
-    
-    print("Student ID: {0};" + "\n" + "Student Name: {1};" + "\n" + "Student DoB: {2}".format(self.s_ID, self.s_Name, self.s_DoB))
-    
 
 
+
+# ---------------------------------------------------COURSE INFORMATION
+# COURSE INFORMATION --------------------------------------------------
+# ---------------------------------------------------------------------
 class Course_Info():
-    def __init__(self, c_ID, c_Name):
+    def __init__(self, c_ID, c_Name, c_Credits):
         self.c_ID = c_ID
         self.c_Name = c_Name
+        self.c_Credits = c_Credits
 
-    print(self.c_ID, self.c_Name)
-
+    # Course ID
     def get_c_ID(self):
         return self.c_ID
-
-class mark_Course():
-    
-    def __init__(self, s_ID, c_ID):
-        self.s_ID = s_ID
+    def set_c_ID(self, c_ID):
         self.c_ID = c_ID
 
-    def setMark(self, M):
-        self.M = M
+    # Course Name
+    def get_c_Name(self):
+        return self.c_Name
+    def set_c_Name(self, c_Name):
+        self.c_Name = c_Name
 
-    def show_M(self):
-        print(self.M)
+    # Course Credits
+    def get_c_Credits(self):
+        return self.c_Credits
+    def set_c_Credits(self, c_Credits):
+        self.c_Credits = c_Credits
 
+
+
+
+# -------------------------------------------------------------ADD MARK
+# ADD MARK ------------------------------------------------------------
+# ---------------------------------------------------------------------
+class mark_Course():
+    def __init__(self, s_ID, c_ID, markk):
+        self.s_ID = s_ID
+        self.c_ID = c_ID
+        self.markk = markk
+
+    # s_ID
+    def set_s_ID(self, s_ID):
+        self.s_ID = s_ID
+    def get_s_ID(self):
+        return self.s_ID
+    
+    # c_ID
+    def get_c_ID(self):
+        return self.c_ID
+    def set_c_ID(self, c_ID):
+        self.c_ID = c_ID
+
+    # Mark
+    def get_mark(self):
+        return self.markk
+    def set_mark(self, markk):
+        self.markk = markk
+
+
+
+# ------------------------------------------------------------------GPA
+# GPA -----------------------------------------------------------------
+# ---------------------------------------------------------------------
+def GPA():
+    m_Gpa = np.array([mark])
+    credits = np.array([course])
+    
+    for s in student:
+        for c in course:
+            cal_gpa = (m_Gpa*Course_Info.c_Credits)/credits
+
+        print(cal_gpa)
+# (mark*credits)/total credit
+
+def sort_By_GPA():
+    
+    sort_Student = sorted(student, key = lambda s_Std: s_Std.gpa,  reverse = True)
+    # show_S = Std_Info.show_Std()
+    for s_Std in sort_Student:
+        s_Std.show_S
+
+
+
+# -------------------------------------------------------INPUT FUNCTION
+# INPUT FUNCTION ------------------------------------------------------
+# ---------------------------------------------------------------------
 def add_Info():
     # Input Student information ##############################
     # Contain:
@@ -65,8 +139,11 @@ def add_Info():
     for i in range(s_Num):
         Std_Info.s_ID = input("      - Student " + str(i + 1) + " ID: ")
         Std_Info.s_Name = input("      - Student " + str(i + 1) + " Name: ")
-        Std_Info.s_DoB = ("      - Student " + str(i + 1) + " DoB: ")
-        student.append({"Student " + str(i + 1) + " Id": Std_Info.s_ID, "Student " + str(i + 1) + " Name": Std_Info.s_Name, "Student " + str(i + 1) + " DoB": Std_Info.s_DoB})
+        Std_Info.s_DoB = input("      - Student " + str(i + 1) + " DoB: ")
+        student.append({"Student #" + str(i + 1) + ": Id: " + Std_Info.s_ID + "; Name: " + Std_Info.s_Name + "; DoB: " + Std_Info.s_DoB})
+        
+
+        # student.append({"Student " + str(i + 1) + "})
         print()
         print("-----------------------------------------------------------------")
 
@@ -77,48 +154,34 @@ def add_Info():
     c_Num = int(input("How many courses?\n  -> There are: "))
     for i in range(c_Num):
         print("    * Enter information about course " + str(i + 1) + ": ")
-        c_ID = input("      - Course " + str(i + 1) +" ID: ")
-        c_Name = input("      - Course " + str(i + 1) +" Name: ")
-        course.append({"Course " + str(i + 1) + "Id": c_ID, "Course " + str(i + 1) + "Name": c_Name})
+        Course_Info.c_ID = input("      - Course " + str(i + 1) +" ID: ")
+        Course_Info.c_Name = input("      - Course " + str(i + 1) +" Name: ")
+        Course_Info.c_Credits = int(input("      - Course " + str(i + 1) + " Credits: "))
+        course.append({"Course #" + str(i + 1) + ": Id: " + Course_Info.c_ID + "; Name: " + Course_Info.c_Name + "; Credits: " + str(Course_Info.c_Credits)})
+        # print("Course #" + str(i + 1))
+        # print("ID: " + Course_Info.c_ID)
+        # print("Name: " + Course_Info.c_Name)
+        # print("Credits: " + Course_Info.c_Credits)
         print()
         print("-----------------------------------------------------------------")
 
-# Ss = Std_Info(input("afhdsgja"))
-# Cc = Course_Info()
-# Mm = mark_Course
 
+
+# ------------------------------------------------------------SHOW INFO
+# SHOW INFO -----------------------------------------------------------
+# ---------------------------------------------------------------------
 def show_Student():
     print("Student list: ")
-    for Std_Info in student:
-        Std_Info.show_Std()
-        print(student)
+    print(student)
+        
 
 def show_Course():
     print("Course list: ")
-    for Course_Info in course:
-        print(Course_Info.show_C())
-        print(course)
+    print(course)
 
 def show_Mark():
-    show_Student()
-    s_ID = input("Select Student: ")
-    for mark_Course in mark:
-        if (mark_Course.s_ID == s_ID):
-            mark_Course.show_M()
-
-# Show
-###
-# def show_Student():
-#     print(" # Information about students:")
-#     print(student)
-#     print()
-
-# def show_Course():
-#     print(" # Information about courses:")
-#     print(course)
-#     print()
-    
-###
+    print("Mark list: ")
+    print(mark)
 
 def marking():
     print("-------------------------------")
@@ -143,28 +206,29 @@ def marking():
     mark.append({"Student ID": s_ID, "Course ID": c_ID, "Mark": m})
     print()
 
-def show_Marks():
-    print(" Here is the list of mark")
-    print(mark)
-    print()
+
+
+# MAIN FUNCTION -------------- MAIN FUNCTION -------------- MAIN FUNCTION
+# MAIN FUNCTION -------------- MAIN FUNCTION -------------- MAIN FUNCTION
+# MAIN FUNCTION -------------- MAIN FUNCTION -------------- MAIN FUNCTION
 
 def option():
-    # Option: ########################################
-    
     while (True):
-        print("Select an option below: ")
-        print("    +> 1. Input information about student and course")
-        print("    +> 2. Input mark of student and course")
-        print("    +> 3. Show information about student")
-        print("    +> 4. Show information about course")
-        print("    +> 5. Show mark of students in courses")
-        print("""
+        print("Type '?' for list of option")
+        choose = input("      => Your option: ")
+        if (choose == "?"):
+            print("Select an option below: ")
+            print("    +> 1. Input information about student and course")
+            print("    +> 2. Input mark of student and course")
+            print("    +> 3. Show information about student")
+            print("    +> 4. Show information about course")
+            print("    +> 5. Show mark of students in courses")
+            print("""
          If you find that this program is to bad, just follow the step below.
          Have fun!!
          :)""")
-        print("    +> 0. Type '0' ('zero') to quit")
+            print("    +> 0. Type '0' ('zero') to quit")
 
-        choose = input("      => Your option: ")
         if (choose == "1"):
             add_Info()
         if (choose == "2"):
@@ -174,7 +238,11 @@ def option():
         if (choose == "4"):
             show_Course()
         if (choose == "5"):
-            show_Marks()
+            show_Mark()
+        if (choose == "6"):
+            GPA()
+        if (choose == "7"):
+            print("You")
         if (choose == "0"):
             break
     print("""  :)
