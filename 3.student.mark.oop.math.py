@@ -1,6 +1,6 @@
 
 import numpy as np
-import curses
+# import curses
 
 student = []
 course = []
@@ -10,10 +10,10 @@ mark = []
 print("--------------------------------")
 print()
 
-stdscr = curses.initscr()
-stdscr.addstr(0, 0, "Current mode: Typing mode",
-              curses.A_REVERSE)
-stdscr.refresh()
+# stdscr = curses.initscr()
+# stdscr.addstr(0, 0, "Current mode: Typing mode",
+#               curses.A_REVERSE)
+# stdscr.refresh()
 
 # --------------------------------------------------STUDENT INFORMATION
 # STUDENT INFORMATION -------------------------------------------------
