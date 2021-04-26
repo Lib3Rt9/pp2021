@@ -1,5 +1,6 @@
+
 import numpy as np
-import curses
+# import curses
 
 student = []
 course = []
@@ -9,10 +10,10 @@ mark = []
 print("--------------------------------")
 print()
 
-stdscr = curses.initscr()
-stdscr.addstr(0, 0, "Current mode: Typing mode",
-              curses.A_REVERSE)
-stdscr.refresh()
+# stdscr = curses.initscr()
+# stdscr.addstr(0, 0, "Current mode: Typing mode",
+#               curses.A_REVERSE)
+# stdscr.refresh()
 
 # --------------------------------------------------STUDENT INFORMATION
 # STUDENT INFORMATION -------------------------------------------------
@@ -107,14 +108,16 @@ class mark_Course():
 # GPA -----------------------------------------------------------------
 # ---------------------------------------------------------------------
 def GPA():
-    m_Gpa = np.array([mark])
-    credits = np.array([course])
+    m_Gpa = np.array([mark_Course.get_mark])
+    credits = np.array([Course_Info.get_c_Credits])
     
     for s in student:
         for c in course:
-            cal_gpa = (m_Gpa*Course_Info.c_Credits)/credits
-
-        print(cal_gpa)
+            # # cal_gpa = (m_Gpa*Course_Info.c_Credits)/credits
+            x = np.dot(m_Gpa, credits)
+            sum = np.sum(credits)
+            cal_Gpa = x/sum
+        print(cal_Gpa)
 # (mark*credits)/total credit
 
 def sort_By_GPA():
@@ -140,7 +143,8 @@ def add_Info():
         Std_Info.s_ID = input("      - Student " + str(i + 1) + " ID: ")
         Std_Info.s_Name = input("      - Student " + str(i + 1) + " Name: ")
         Std_Info.s_DoB = input("      - Student " + str(i + 1) + " DoB: ")
-        student.append({"Student #" + str(i + 1) + ": Id: " + Std_Info.s_ID + "; Name: " + Std_Info.s_Name + "; DoB: " + Std_Info.s_DoB})
+        student.append({"Student #" + str
+        (i + 1) + ": Id: " + Std_Info.s_ID + "; Name: " + Std_Info.s_Name + "; DoB: " + Std_Info.s_DoB})
         
 
         # student.append({"Student " + str(i + 1) + "})
@@ -183,6 +187,10 @@ def show_Mark():
     print("Mark list: ")
     print(mark)
 
+
+# ----------------------------------------------------------------------------
+# ADD MARK -------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 def marking():
     print("-------------------------------")
     print()
@@ -202,7 +210,7 @@ def marking():
 
     # Mark #######################################
     print()
-    m = input(" => Enter the mark: ")
+    m = float(input(" => Enter the mark: "))
     mark.append({"Student ID": s_ID, "Course ID": c_ID, "Mark": m})
     print()
 
@@ -214,8 +222,10 @@ def marking():
 
 def option():
     while (True):
+        print()
         print("Type '?' for list of option")
         choose = input("      => Your option: ")
+        print()
         if (choose == "?"):
             print("Select an option below: ")
             print("    +> 1. Input information about student and course")
@@ -223,6 +233,8 @@ def option():
             print("    +> 3. Show information about student")
             print("    +> 4. Show information about course")
             print("    +> 5. Show mark of students in courses")
+            print("    +> 6. Show GPA of students")
+            print("    +> 7. Show students after being sorted by GPA")
             print("""
          If you find that this program is to bad, just follow the step below.
          Have fun!!
