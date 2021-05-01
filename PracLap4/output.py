@@ -1,4 +1,4 @@
-import curses
+#import curses
 from domains import student, course, mark, Std_Info, Course_Info, mark_Course
 import numpy as np
 

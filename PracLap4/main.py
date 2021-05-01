@@ -1,6 +1,5 @@
-
 import numpy 
-import curses
+#import curses
 from domains import student, course, mark
 import input as inp
 import output
