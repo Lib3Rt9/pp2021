@@ -1,4 +1,4 @@
-import domains
+
 import output
 from domains import student, course, mark, Std_Info, Course_Info, mark_Course
 

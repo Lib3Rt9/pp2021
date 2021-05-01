@@ -1,4 +1,3 @@
-
 import numpy 
 # import curses
 from domains import student, course, mark
