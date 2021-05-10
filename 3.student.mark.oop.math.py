@@ -110,7 +110,7 @@ class mark_Course():
 def GPA():
     m_Gpa = np.array([mark_Course.get_mark])
     credits = np.array([Course_Info.get_c_Credits])
-    
+    x = 0
     for s in student:
         for c in course:
             # # cal_gpa = (m_Gpa*Course_Info.c_Credits)/credits
