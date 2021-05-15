@@ -1,0 +1,148 @@
+PROGRAM:
+
+
+#############################
+
+
+class EMployee: 
+	- Name:
+	- Gender:
+	- Dob:
+	- Team:	A
+Staff: 
+	- Name:
+	- Gender:
+	- Dob:
+	- Team:	A
+Manager:
+	(A Person)
+	- Name:
+	- Gender:
+	- Dob:
+	
+class Salary:
+	(updating)
+	- Name Em/Staff:
+	- Working hours: (1)
+	- Money/Hour: (2)
+	- Total Salary = (1) x (2)
+	
+
+##########################################################
+Function:
+Staff: 
+	- Look up EM
+	- Enter (1) and (2)
+	- Print info of Salary inside a team
+
+Manager:
+	- Add or remove EM
+	- Assign Staff / Manager
+	- Look up
+
+
+##########################################################
+class 
+	A
+	V
+	I/O
+
+#####################
+Input (1) and (2)
+
+
+Data Base Contain:
+(
+Name, Gender, DOb
+			(Choose Function)
+Input 1 2
+"Updating..."
+)
+
+	if input = "11"
+		print (salary = 11)
+	else:	
+		print ("Updating...")
+
+
+##############################################################
+Slide:
+
+	Slide structure:
+		- Introduction (what, why...)
+			(
+			 WHAT is this?: Goal
+			`WHY use?: Easy to lookup, easy for memorize, because it good...
+			)
+
+		- Structure (py classes, modules, packages, database diagram)
+			(
+			 Class: Employee, Staff, Manager, Salary
+			 Module: Numpy...
+			 Package: HR.exe, Library, Data...
+			 Database diagram
+			)
+
+		- Demo
+			(
+			 Show program
+				Try searching ...
+			)
+
+		- Conclusion (done, not done...)
+			(
+			 Done?
+				- Disadvantage: ?
+				- Bugs: ?
+				- ...
+			 Not done?
+				- Why not done?
+				- How to fix
+				- ...
+			)
+			
+
+##############################################################
+Work:
+	- Data Base: "https://drive.google.com/file/d/1rmGMAz3wd81zCDjg7TYkGTzrsgjxHKnd/view?usp=sharing"
+	- Plan: This is the plan
+	- Coding in Py: <Minh> <Phuc> <with every other members> handle  -  need show regularly  -  have support from members 
+	- Coding in (Py)SQL: <Duc>
+	- Slide: Linh + Dung 
+	- Filter Data Base: Linh + Dung
+	- Present: Phuc
+
+
+
+(###########
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE DATABASE mydatabase")
+###########)
+
+
+##############################################################
+DEADLINE
+	Filter Data:    before 16h
+	DB diagram:     before 12h
+	Coding Py:      23h59  -  18/05/2021
+	Coding SQL:     23h59  -  17/05/2021  but as soon as better
+	Slide:          16h  -  19/05/2021
+	
+	* Show and explain regularly
+	* Try practicing of presentation ("many" is good)
+
+
+
+
+
+
+
