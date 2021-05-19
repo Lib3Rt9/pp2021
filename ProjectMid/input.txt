@@ -1,0 +1,41 @@
+name	                                    gender	           DoB	       office	         working_hour      	wage$/hour	total salary $	
+Bùi Tấn Trường                          male              19/02/1986            A               192			6		1152
+Nguyễn Văn Toản                       male               26/11/1999           A			192			6		1152
+Nguyễn Văn Hoàng                     male              17/02/1995           A			192			10		1920
+Phạm Văn Phong                        male               03/06/1993          A			192			6		1152
+Quế Ngọc Hải                             male              15/05/1993            A 		192			6		1152
+Trần Văn Kiên                             male              29/09/1996           A		192			6		1152
+Bùi Hoàng Việt Anh                     male              01/01/1999           A			192			10		1920	
+Trần Đình Trọng                          male             25/04/1997           A		192			6		1152
+Nguyễn Trọng Hoàng                 male              14/04/1989           A			192			6		1152
+Nguyễn Phong Hồng Duy           male              13/06/1996          A				192			6		1152
+Vũ Văn Thanh                             male              14/04/1996          B		192			6		1152
+Đoàn Văn Hậu                            male              19/04/1999           B		192			6		1152
+Nguyễn Thành Chung                male              08/09/1997           B			192			6		1152
+Hồ Tấn Tài                                 male              06/11/1997           B		192			6		1152
+Phạm Xuân Mạnh                       male              09/02/1996           B			192			6		1152
+Đỗ Thanh Thịnh                         male              18/08/1998           B			192			6		1152
+Lê Văn Xuân                              male               27/02/1999           B		192			6		1152
+Nguyễn Minh Tùng                    male               09/08/1992           B			192			6		1152
+Nguyễn Thanh Bình                  male               02/11/2000           B			192			6		1152
+Nguyễn Văn Toàn                      male              12/04/1996           B			192			6		1152
+Phan Văn Đức                          male                11/04/1996          C			192			6		1152
+Cao Văn Triền                           male                18/06/1993          C		192			6		1152
+Nguyễn Hoàng Đức                  male                11/01/1998           C			192			6		1152
+Nguyễn Quang Hải                   male                 12/04/1997         C			192			6		1152
+Tô Văn Vũ                                male                 20/10/1993         C		192			6		1152
+Phạm Đức Huy                         male                20/01/1995         C			192			6		1152
+Nguyễn Tuấn Anh                    male                 16/05/1995         C			192			6		1152
+Trần Minh Vương                    male                 28/03/1995         C			192			6		1152
+Dương Thị Hên                       female              15/08/1998         C			192			6		1152
+Đặng Thị Kim Thanh               female              28/03/1999         C			192			6		1152
+Đinh Thị Trà Giang                 female              26/06/1992         D			192			6		1152
+Trần Thị Thanh Thúy             female              11/12/1997          D			192			6		1152
+Nguyễn Thị Kim Liên              female              10/02/1993          D			192			6		1152
+Nguyễn Linh Chi                     female              31/07/1990         D			192			6		1152
+Bùi Vũ Thanh Tuyền               female              30/05/1991         D			192			6		1152	
+Nguyễn Thị Hồng Đào            female              24/07/1994         D				192			6		1152
+Đinh Thị Thúy                         female              12/04/1998         D			192			6		1152
+Lê Thanh Thúy                       female              23/05/1995         D			192			6		1152
+Nguyễn Sao Mai                     female              11/11/1999          D			192			6		1152
+Lê Hà Linh                              female               05/07/2000         D		192			6		1152
