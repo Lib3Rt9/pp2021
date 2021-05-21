@@ -1,0 +1,65 @@
+check_user_account() : Check if username and password correct, return a string
+	if string = "A" run manager.main()
+	else run staff.main()
+check_date(DoB) : Check if DoB is in form DD/MM/YYYY, return DoB
+check_gender(gender) : Check if gender is valid, Male or Female, return gender
+prevent_duplicate(id, list) : Prevent having same ID in the list, return id
+
+---------------- Manager ------------------
+
+get_manager_info() : Get manager info, return manager (object)
+insert_manager(manager) : Dump manager into Database using pickle
+read_manager() : Read and show manager info
+
+staff_count() : Count staff, return an Integer
+staff_info(s_count) : Create a new list of s_count people, return s_list
+show_staff(s_list) : Show s_list
+insert_staff(s_list) : Dump s_list into Databse using pickle
+read_staff() : Read s_list, return s_list
+add_staff(s_list) : Add new staff info, return s_list
+del_staff(s_list) : Delete a staff info, return s_list
+
+staff_salary(s_list) : Create a new list of salary base on s_list, return m_list
+show_staff_salary(m_list) : Show m_list
+insert_staff_salary(m_list) : Dump m_list into Databse using pickle
+read_staff_salary() : Read m_list, return m_list
+add_staff_salary(s_list, m_list) : Add new staff salary info, return m_list
+del_staff_salary(m_list) : Delete an staff salary info, return m_list
+
+insert_all_employee(s_list) + read_all_employee() : Create a new list of all employee base on length of s_list,
+return all_e, dump all_e into Database using pickle,  read all_e, print all_e
+
+insert_all_employee_salary(s_list) + read_all_employee_salary() : Create a new list of all employee salary base on length of s_list,
+return all_p, dump all_p into Database using pickle,  read all_p, print all_p
+
+main() : running when input Username and Password of the manager
+
+---------------- Staff ------------------
+
+your_info(office) : Show informations of the staff of the office
+
+employee_count() : Count employee, smaller than 10, return an Integer
+update_employee(e_count, office) : Create a new list of e_count people, return e_list
+show_employee(e_list) : Show e_list
+insert_employee(e_list) : Dump e_list into Databse using pickle
+read_employee(office) : Read e_list of the office, return e_list
+add_employee(e_list, office) : Add new employee info of the office, return e_list
+del_employee(e_list) : Delete an employee info, return e_list
+
+salary(e_list, office) : Create a new list of salary base on e_list, return p_list
+show_salary(p_list) : Show p_list
+insert_salary(p_list) : Dump p_list into Databse using pickle
+read_salary(office) : Read p_list of the office, return p_list
+add_salary(e_list, p_list, office) : Add new salary info of the office, return p_list
+del_salary(p_list) : Delete an salary info, return p_list
+
+main(office) : running when input Username and Password of the staff
+
+---------------- List ------------------
+
+s_count : Number of staff			s_list : Staff list 
+e_count : Number of employee			e_list : Employee list
+p_list : Payment list (Employee salary)		m_list : Money list (Staff salary)
+all_e : All employee				all_p : All employee salary
+
+End.
